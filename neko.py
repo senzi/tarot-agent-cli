@@ -17,17 +17,15 @@ class TarotData(BaseModel):
     total: int
     cards: List[Card]
 
-# --- 目录配置 ---
 ROOT_DIR = Path(__file__).parent
-JSON_DIR = ROOT_DIR / "json"
 
 app = typer.Typer(help="“猫咪塔罗”占卜助手")
 
 # --- 数据加载 ---
 def load_json(filename: str):
-    file_path = JSON_DIR / filename
+    file_path = ROOT_DIR / filename
     if not file_path.exists():
-        typer.echo(f"Error: {filename} not found in {JSON_DIR}", err=True)
+        typer.echo(f"Error: {filename} not found in {ROOT_DIR}", err=True)
         raise typer.Exit(code=1)
     with open(file_path, "r", encoding="utf-8") as f:
         return json.load(f)

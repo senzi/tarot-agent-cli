@@ -29,7 +29,7 @@ CLI 主要包含三个核心指令，支持在原生文本模式或对 Agent 友
 
 ### 1. `list` - 查看所有牌阵清单
 
-列出 `json/spreads.json` 中配置的所有可用的牌阵信息。这一步通常为 Agent 引导用户选择占卜方式时查询可用选项。
+列出 `spreads.json` 中配置的所有可用的牌阵信息。这一步通常为 Agent 引导用户选择占卜方式时查询可用选项。
 
 **传参方式：**
 ```bash
@@ -134,6 +134,6 @@ python neko.py compose --spread daily_one --cards 0,1 --revs 0,1 --json
 
 ## 🎨 开发与定制
 
-如果你想更换 Prompt 的系统人设或微调牌阵，你可以随时修改 `json` 目录下的：
+如果你想更换 Prompt 的系统人设或微调牌阵，你可以随时修改以下文件：
 * `tarot.json`: 所有 78 张卡牌的详细定义与释义。
 * `spreads.json`: 控制着牌阵和 `shared_prompt_template`（公共 Prompt 模板）。CLI 每次都会动态加载最新数据。
