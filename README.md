@@ -33,7 +33,7 @@ CLI 主要包含三个核心指令，支持在原生文本模式或对 Agent 友
 
 **传参方式：**
 ```bash
-python main.py list
+python neko.py list
 ```
 
 **返回结果示例（纯文本输出）：**
@@ -63,10 +63,10 @@ ID: past_present_future
 **传参方式：**
 ```bash
 # 基础调用 (自然文本输出提示词)
-python main.py draw --spread daily_one
+python neko.py draw --spread daily_one
 
 # 排除逆位，输出 JSON (对 LLM 最友好的调用)
-python main.py draw --spread past_present_future --no-rev --json
+python neko.py draw --spread past_present_future --no-rev --json
 ```
 
 **返回结果示例 (`--json` 模式)：**
@@ -109,17 +109,17 @@ python main.py draw --spread past_present_future --no-rev --json
 **传参方式：**
 ```bash
 # 得失牌阵（需求2张牌），传入 愚者(0)为正位，魔术师(1)为逆位。
-python main.py compose --spread gain_and_loss --cards 0,1 --revs 0,1
+python neko.py compose --spread gain_and_loss --cards 0,1 --revs 0,1
 
 # 等效的 JSON 模式
-python main.py compose --spread gain_and_loss --cards 0,1 --revs flase,true --json
+python neko.py compose --spread gain_and_loss --cards 0,1 --revs flase,true --json
 ```
 
 **异常处理与错误提示 (`--json` 模式下)：**
 
 如果用户的输入有误（如 ID 不存在、数组长度不符）：
 ```bash
-python main.py compose --spread daily_one --cards 0,1 --revs 0,1 --json
+python neko.py compose --spread daily_one --cards 0,1 --revs 0,1 --json
 ```
 
 **错误回调示例：**
